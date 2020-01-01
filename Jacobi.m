@@ -5,20 +5,22 @@ err=1;
 itr=0;
 T=abs(norm(B)/(1-norm(B)));
 while err>tol && itr<nMax
-    xk=x;
+    xk=x
     
     for i=1:n
-        sigma=0;
+        disp([itr+1,i]);
+        sigma=0
         
         for j=1:n
             
             if j~=i
-                sigma=sigma+A(i,j)*x(j);
+                sigma=sigma+A(i,j)*xk(j)
             end
             
         end
         
         x(i)=(1/A(i,i))*(B(i)-sigma);
+        disp(x(i));
     end
     
     itr=itr+1;
